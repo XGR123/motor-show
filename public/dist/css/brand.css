@@ -1,0 +1,100 @@
+
+
+
+
+.brand>div:not(:last-child){
+	border-bottom: 2px solid grey;
+	padding-top: 55px;
+	padding-bottom: 55px;
+}
+
+
+
+/*-----------------------------------------------------------------------*/
+
+.nav2{
+	position: relative;
+	top: -15px;
+	z-index: 1
+}
+.nav2>ul>li{
+	height: 55px;
+	background: #55a436;
+	margin-right: 15px;
+	line-height: 55px;
+	cursor: pointer;	
+}
+.nav2>ul>li>a{
+	text-decoration: none;
+	color: white !important;
+}
+
+
+/*-----------------------------------------------------------------*/
+
+.media{
+	/*padding-bottom: 25px;
+	border-bottom: 2px solid lightgrey;*/
+}
+
+.about p{
+	/*padding-right: 55px;*/
+	line-height: 25px;
+	font-family: "宋体"
+}
+.about h3,.honor>h3,.recruit>h3{
+	padding-bottom: 25px;
+	padding-top: 25px;
+	color: #55a436
+}
+.img-t{
+	padding-top: 100px;
+}
+
+
+/*---------------------------------------------------------------------*/
+
+.honor{
+	height: 400px;
+	/*border-bottom: 2px solid lightgrey;*/
+
+}
+@media (max-width: 420px){
+	.img-t{
+		width: 320px;
+	}
+	.honor{
+		height: 830px;
+		border-bottom: none;
+	}
+}
+
+
+
+.honor>ul>li{
+	/*height: 300px;*/
+	border:1px solid lightgrey;
+	margin-bottom: 35px;
+	padding-bottom: 15px;
+
+}
+.honor a{
+	color: black;
+	text-decoration: none;
+}
+
+
+/*-------------------------------------------------------------------*/
+
+.recruit{
+	
+}
+.recruit>ul>li:first-child{
+	font-size: 25px;
+	font-family: "宋体";
+	margin-bottom: 15px;
+}
+.recruit>ul>li{
+	font-size: 17px;
+	line-height: 35px;
+}

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="/dist/css/news.css">
+</head>
+<body>
+	<%- include("header") %>
+	
+	<div class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header col-md-4">
+				<button type="button" class="navbar-toggle collapsed navigation" data-toggle="collapse" data-target="#nav2">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<!-- <div class="logo navbar-brand">
+					<img src="images/logo.png">
+					<div>
+						<h3>新能源汽车</h3>
+						<span>New energy cars</span>
+					</div>
+				</div> -->
+			</div>
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="nav2 collapse navbar-collapse col-md-8" id="nav2">
+				<ul class="menu nav navbar-nav text-center">
+		   	  		<li class="img-circle"><a href="javascript:void(0)">公司新闻</a></li>
+		   	  		<li class="img-circle"><a href="javascript:void(0)">行业新闻</a></li>
+		   	  		<li class="img-circle"><a href="javascript:void(0)">较新活动</a></li>
+		   	  		<li class="img-circle"><a href="javascript:void(0)">养护知识</a></li>
+		   		</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<% for(var i=0;i<article.length;i++){ %>
+		<ul>
+			<li class="col-md-4">
+				<a href="/article/info/<%= article[i]._id %>"><img src="images/news-active1.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="/article/info/<%= article[i]._id %>"><strong><%= article[i].title %></strong></a></p>
+				<p><%= article[i].time.getFullYear() %>-<%= article[i].time.getMonth()+1 %>-<%= article[i].time.getDate() %></p>
+				<p class="tworows"><%= article[i].jianjie %></p>
+			</li>
+		</ul>
+		<% } %>
+		<ul>
+			<li class="col-md-4">
+				<a href="javascript:void(0)"><img src="images/news-active3.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="javascript:void(0)"><strong>如何从发动机的机油颜色判断机油是否正常？</strong></a></p>
+				<p>2017-07-20</p>
+				<p>发动机机油使用一段时间后，颜色会逐渐变黑，其他颜色都是不正常的现象。促使机油发黑的原因主要有四项：1</p>
+			</li>
+		</ul>
+		<ul>
+			<li class="col-md-4">
+				<a href="javascript:void(0)"><img src="images/news-active4.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="javascript:void(0)"><strong>如何从发动机的机油颜色判断机油是否正常？</strong></a></p>
+				<p>2017-07-20</p>
+				<p>发动机机油使用一段时间后，颜色会逐渐变黑，其他颜色都是不正常的现象。促使机油发黑的原因主要有四项：1</p>
+			</li>
+		</ul>
+		<ul>
+			<li class="col-md-4">
+				<a href="javascript:void(0)"><img src="images/news-active2.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="javascript:void(0)"><strong>如何从发动机的机油颜色判断机油是否正常？</strong></a></p>
+				<p>2017-07-20</p>
+				<p>发动机机油使用一段时间后，颜色会逐渐变黑，其他颜色都是不正常的现象。促使机油发黑的原因主要有四项：1</p>
+			</li>
+		</ul>
+		<ul>
+			<li class="col-md-4">
+				<a href="javascript:void(0)"><img src="images/news-active1.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="javascript:void(0)"><strong>如何从发动机的机油颜色判断机油是否正常？</strong></a></p>
+				<p>2017-07-20</p>
+				<p>发动机机油使用一段时间后，颜色会逐渐变黑，其他颜色都是不正常的现象。促使机油发黑的原因主要有四项：1</p>
+			</li>
+		</ul>
+		<ul>
+			<li class="col-md-4">
+				<a href="javascript:void(0)"><img src="images/news-active1.jpg" class="col-md-12 col-xs-12"></a>
+				<p><a href="javascript:void(0)"><strong>如何从发动机的机油颜色判断机油是否正常？</strong></a></p>
+				<p>2017-07-20</p>
+				<p>发动机机油使用一段时间后，颜色会逐渐变黑，其他颜色都是不正常的现象。促使机油发黑的原因主要有四项：1</p>
+			</li>
+		</ul>
+		<div class="pagination">
+			<ul class="pagination">
+				<li>
+					<a href="#" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+				<li><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li>
+					<a href="#" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<%- include("footer") %>
+</body>
+</html>

@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>文章详情页</title>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<style type="text/css">
+		.content{
+			margin:55px 0;
+		}
+		.media{
+			margin:55px 0;
+		}
+		.media-object{
+			width: 100px;
+			height: 100px;
+		}
+		/*.media-left-100{
+			width: 120px;
+			height: 100px;
+			float: left;
+		}
+*/
+		.little{
+			width: 50px;
+			height: 50px;
+		}
+
+		.dateview{
+			background: white;
+			margin-top: 25px;
+			padding:5px;
+		}
+		.dateview>span{
+			margin-right: 15px;
+		}
+	</style>
+</head>
+<body>
+	<%- include('header') %>
+	
+			
+			<div class="container content">
+				<div class="media">
+					<div class="media-left">
+						<a href="" class="user1">
+							<img class="media-object img-thumbnail" src="/upload/<%= article.user.headimg %>">
+						</a>
+					</div>
+					<div class="tip" style="display: none">
+						<div class="header"><%= article.user.name %> | <%= article.user.sex %></div>
+						<div class="content"><%= article.user.introduce %></div>
+					</div>
+					<div class="media-body">
+						<h4 class="media-heading text-center">
+							<a href="#">
+								<%= article.title %>	
+							</a>	
+						</h4>
+						<p><%= article.jianjie %></p>
+						<p><%= article.info %></p>
+						
+						<div class="dateview col-md-12">
+							<img src="/images/time.jpg">
+							<span>
+								<%= article.time.getFullYear() %>-
+								<%= article.time.getMonth()+1 %>-
+								<%= article.time.getDate() %>
+								<%= article.time.getHours() %>:
+								<%= article.time.getMinutes() %>:
+								<%= article.time.getSeconds() %>
+							</span>
+							<span>作者：<%= article.user.name %></span>
+							<span>
+								浏览(<%= article.pv %>)
+							</span>
+							<span>
+								留言(<%= article.msgcount %>)
+							</span>
+							<span class="btn btn-xs">
+								<% if(locals.user){ %>
+								<% if(locals.user._id == article.user._id){ %>
+								<a href="/article/edit/<%= article._id %>">编辑 </a>|
+								<a id="<%= article._id %>" class="btn-del">删除</a>
+								<% } %>
+								<% } %>
+							</span>
+						</div>
+			
+					</div>
+				</div>
+			</div>
+
+			<div class="media col-md-offset-3">
+				
+				<div class="media-body">
+					<% for(var i=0; i<ms.length; i++){ %>
+					<div class="media">
+						<div class="media-left">
+							<a href="/i/<%= ms[i].user._id %>">
+								<img class="media-object little" src="/upload/<%= ms[i].user.headimg %>">
+							</a>
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading">
+								<a href="/i/<%= ms[i].user._id %>">
+									<%= ms[i].user.name %>	
+								</a>
+								<small>
+									<%= ms[i].time.getFullYear() %>-
+									<%= ms[i].time.getMonth()+1 %>-
+									<%= ms[i].time.getDate() %>
+									<%= ms[i].time.getHours() %>:
+									<%= ms[i].time.getMinutes() %>:
+									<%= ms[i].time.getSeconds() %>
+								</small>
+
+
+								<% if(ms[i].user._id == locals.user._id){ %>
+								<a href="/msg/del/<%= ms[i]._id %>">删除</a>	
+								<% } %>
+							</h4>
+							<p><%= ms[i].context %></p>
+						</div>
+					</div>
+
+					<% } %>
+				</div>
+			</div>
+
+
+			<% if(locals.user){ %>
+			<div class="media">
+				<!-- <div class="media-left-100"></div> -->
+				<div class="media-body">
+					<h4 class="media-heading col-md-offset-3">
+						评论:	
+					</h4>
+					<div>
+						<form class="form-horizontal col-md-offset-3" method="post" action="/msg">
+							<textarea class="form-control" name="context" style="width: 50%"></textarea>
+							<input type="hidden" name="aid" value="<%= article._id %>">
+							<input type="hidden" name="uid" value="<%= locals.user._id  %>">
+							<input class="btn btn-default" type="submit" value="评论" >
+						</form>
+					</div>
+				</div>
+			</div>
+			<% } %>
+
+	
+
+	<%- include('footer') %>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+	$('.btn-del').click(function(){
+		console.log(this.id);
+		var aid = this.id;
+		var _this = $(this);
+		$.ajax({
+			url:'/article/del/'+aid,
+			type:'get',
+			success:function(data){
+				if (data=='ok') {
+					//window.location.reload()
+					_this.parents('.media').remove();
+				}
+			}
+		})
+	})
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/dist/css/swiper-4.2.0.min.css">
+	<link rel="stylesheet" type="text/css" href="/dist/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="/dist/css/endtoend.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-default first">
+		<div class="container-fluid">
+
+			<div class="navbar-header col-md-4">
+				<button type="button" class="navbar-toggle collapsed navigation" data-toggle="collapse" data-target="#navigation">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<div class="logo navbar-brand">
+					<img src="/images/logo.png">
+					<div>
+						<h3>新能源汽车</h3>
+						<span>New energy cars</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="collapse navbar-collapse col-md-8" id="navigation">
+				<ul class="menu text-left nav navbar-nav" aria-haspopup="true">
+		   	  		<li><a href="/">品牌首页</a></li>
+		   	  		<li><a href="/brand">品牌概览</a></li>
+		   	  		<li><a href="/news">新闻活动</a></li>
+		   	  		<li><a href="/product">全系车型</a></li>
+		   	  		<li><a href="/service">服务支持</a></li>
+		   	  		<li><a href="/business">招商加盟</a></li>
+		   	  		<li><a href="/contact">联系我们</a></li>
+		   	  		<% if(locals.user){ %> 
+		   	  			<li><a href="/i/<%= locals.user._id %>"><%= locals.user.name %></a></li>
+		   	  			<li><a href="/article">发表文章</a></li>
+		   	  			<li><a href="/exit">退出</a></li>
+		   	  		<% }else{ %>
+			   	  		<li><a href="/login">登录</a></li>
+			   	  		<li><a>|</a></li>
+			   	  		<li><a href="/register">注册</a></li>
+			   	  	<% } %>
+		   		</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="swiper-container slideshow">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<a href="product.html"><img src="/images/slideshow1.jpg"></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="product.html"><img src="/images/slideshow2.jpg"></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="product.html"><img src="/images/slideshow3.jpg"></a>
+			</div>
+		</div>
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+		
+		
+	</div>
+
+
+
+	<script type="text/javascript" src="/dist/js/jquery.min.js"></script>
+	<script type="text/javascript" src="/dist/js/bootstrap.js"></script>
+	<script type="text/javascript" src="/dist/js/swiper-4.2.0.min.js"></script>
+	<script type="text/javascript" src="/dist/js/swiper.animate1.0.3.min.js"></script>
+	<script type="text/javascript" src="/dist/js/index.js"></script>
+</body>
+</html>

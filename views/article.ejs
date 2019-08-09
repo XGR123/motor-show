@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>发表文章</title>
+	<style type="text/css">
+		.publish{
+			margin:55px 0;
+			background: lightgrey;
+		}
+	</style>
+</head>
+<body>
+	<%- include('header') %>
+
+			
+			<div class="container text-center publish">
+				<!-- <%= locals.user._id %> -->
+				<h3>发表文章</h3>
+				<form class="form-horizontal" method="post" action="/article/save">
+					<input type="hidden" name="uid" value="<%= locals.user._id %>">
+
+					<div class="form-group">
+						<label class="col-md-2 col-md-offset-2 col-xs-4 control-label" for="uname">标题:*</label>
+						<div class="col-md-6">
+							<input type="text" class="col-md-8 col-xs-8" id="uname" name="title">
+						</div>
+
+					</div>
+
+					<div class="form-group">
+						<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">简介:*</label>
+						<div class="col-md-6">
+							<textarea class="col-md-8 col-xs-8" rows="3" name="jianjie"></textarea>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">内容:*</label>
+						<div class="col-md-6">
+							<textarea class="col-md-8 col-xs-8" rows="3" name="info"></textarea>
+						</div>
+					</div>
+
+
+
+					<div class="form-group">
+						<div class="col-md-5 col-md-offset-2">
+							<input class="btn btn-default" type="submit" value="发表">
+						</div>
+					</div>
+				</form>
+			</div>
+	
+	
+
+	<%- include('footer') %>
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+
+<script type="text/javascript">
+	
+</script>
+
+
+</body>
+</html>

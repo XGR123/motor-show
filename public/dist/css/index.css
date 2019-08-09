@@ -1,0 +1,112 @@
+
+
+/*------------------------------------------------------------------------*/
+
+.news{
+	margin-top: 55px;
+	margin-bottom: 55px;
+	height: 200px
+}
+.separate{
+	height: 2px;
+	background: lightgrey;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+.introduce{
+	font-size: 16px;
+}
+.introduce>a{
+	margin-top:25px;
+}
+
+@media(max-width: 420px){
+	.news{
+		margin-top: 0px;
+		/*margin-bottom: 55px;*/
+	}
+	.swiper-container img{
+		width: 100%;
+		height: 300px;
+	}
+}
+
+
+/*--------------------------------------------------------------*/
+
+.cars{
+	background: url('../../../images/indnewsbg.jpg');
+	padding-bottom: 68px;
+}
+.tip>li{
+	top: -43px;
+	display: none;
+}
+.show{
+	display: block !important;
+}
+.tip>li>a{
+	background: #61934c;
+	padding-right:70px;
+	padding-bottom: 15px;
+    padding-top: 15px;
+    text-decoration: none;
+    color: white;
+}
+@media(max-width: 420px){
+	.cars img{
+		margin-top: 25px;
+	}
+	.base-slideshow{
+		width: 100%;
+		height: 300px;
+	}
+	.base-slideshow img{
+		width: 100%;
+		height: 300px;
+	}
+}
+
+.base-slideshow{
+	width: 100%;
+	height: 600px;
+}
+.base-slideshow img{
+	width: 100%;
+	height: 600px;
+}
+
+/*-----------------------------------------------------------------*/
+
+.yabei1{
+	padding-top: 85px;
+	padding-bottom: 85px;
+}
+.yabei1 h3:nth-of-type(2){
+	color: grey;
+	padding-bottom: 45px;
+}
+.yabei1 p{
+	padding-bottom: 15px;
+	font-size: 15px;
+}
+
+
+/*--------------------------------------------------------------------*/
+
+body>div:not(:last-nth-child){
+	margin-bottom: 55px;
+}
+
+/*---------------------------------------------------------------*/
+
+.service{
+	margin-top: 55px;
+}
+
+
+
+
+
+
+

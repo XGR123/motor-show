@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>edit</title>
+	<style type="text/css">
+		.edit{
+			margin:55px 0;
+		}
+	</style>
+</head>
+<body>
+	<%- include("header") %>
+	<div class="container">
+				<h2 class="text-center">edit</h2>
+				<h3 class="text-center"><%= locals.user.name %></h3>
+				<!-- <%= locals.user._id %> -->
+				<form class="form-horizontal" method="post" action="/article/editsave">
+					<input type="hidden" name="uid" value="<%= locals.user._id %>">
+					<input type="hidden" name="aid" value="<%= _id %>">
+
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="uname">标题:*</label>
+						<div class="col-md-10">
+							<input type="text" class="form-control" id="uname" name="title" value="<%= title %>">
+						</div>
+
+					</div>
+					<div class="form-group">
+						<label for="pw" class="col-md-2 control-label">简介:*</label>
+						<div class="col-md-10">
+							<textarea class="form-control" rows="3" name="info"><%= jianjie %></textarea>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="pw" class="col-md-2 control-label">内容:*</label>
+						<div class="col-md-10">
+							<textarea class="form-control" rows="3" name="info"><%= info %></textarea>
+						</div>
+					</div>
+
+
+
+					<div class="form-group">
+						<div class="col-md-10 col-md-offset-2">
+							<input class="btn btn-default" type="submit" value="确认">
+						</div>
+					</div>
+				</form>
+			</div>
+	<%- include("footer") %>
+</body>
+</html>

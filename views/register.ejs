@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>register</title>
+	<style type="text/css">
+		.reg{
+			border:2px double grey;
+			margin: 300px 100px;
+			background: lightgrey;
+			opacity: 0.9;
+		}
+	</style>
+</head>
+<body>
+
+	<nav class="navbar navbar-default navbar-fixed-top first">
+		<div class="container-fluid">
+
+			<div class="navbar-header col-md-4">
+				<button type="button" class="navbar-toggle collapsed navigation" data-toggle="collapse" data-target="#navigation">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<div class="logo navbar-brand">
+					<img src="images/logo.png">
+					<div>
+						<h3>新能源汽车</h3>
+						<span>New energy cars</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="collapse navbar-collapse col-md-8" id="navigation">
+				<ul class="menu text-left nav navbar-nav">
+		   	  		<li><a href="/">品牌首页</a></li>
+		   	  		<li><a href="/brand">品牌概览</a></li>
+		   	  		<li><a href="/news">新闻活动</a></li>
+		   	  		<li><a href="/product">全系车型</a></li>
+		   	  		<li><a href="/service">服务支持</a></li>
+		   	  		<li><a href="/business">招商加盟</a></li>
+		   	  		<li><a href="/contact">联系我们</a></li>
+		   	  		<li><a href="/login">登录</a></li>
+		   	  		<li><a>|</a></li>
+		   	  		<li><a href="/register">注册</a></li>
+		   		</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="reg container text-center ">
+		<h3>注册页面</h3>
+		<p>注册会员即可畅享9折优惠</p>
+		<form class="form-horizontal register" method="post" action="/register/saveuser" enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="col-md-2 col-md-offset-2 col-xs-4 control-label" for="uname">用户名:*</label>
+				<div class="col-md-6">
+					<input type="text" class="col-md-8 col-xs-8" id="uname" name="uname" required="required">
+					<span id="showName"></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">密码:*</label>
+				<div class="col-md-6">
+					<input type="password" id="pw" class="col-md-8 col-xs-8" name="pw" required="required">
+					<span id="showPw"></span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">重复密码:*</label>
+				<div class="col-md-6">
+					<input type="password" id="pw2" class="col-md-8 col-xs-8" name="pw2" required="required">
+					<span id="showPw2"></span>
+				</div>
+			</div>
+
+			
+
+			<div class="form-group">
+				<label class="col-md-2 col-md-offset-2 col-xs-4 control-label">性别:*</label>
+				<div class="col-md-6">
+					<select class="col-md-2 col-xs-3" name="sex" required="required">
+						<option>男</option>
+						<option>女</option>
+						<option>保密</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">头像:*</label>
+				<div class="col-md-6 col-xs-6">
+					<input type="file" name="img" required="required">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="pw" class="col-md-2 col-md-offset-2 col-xs-4 control-label">个人介绍:*</label>
+				<div class="col-md-6">
+					<textarea class="col-md-8 col-xs-8" rows="3" name="introduce" required="required"></textarea>
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<div class="col-md-5 col-md-offset-2">
+					<input class="btn btn-default" type="button" onclick="sub()" value="注册">
+				</div>
+
+			</div>
+		</form>
+	</div>
+	<%- include("footer") %>
+
+</body>
+</html>

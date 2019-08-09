@@ -1,0 +1,31 @@
+
+
+/*-----------------------------------------------------------------------*/
+
+.nav2{
+	position: relative;
+	top: -15px;
+	z-index: 1
+}
+.nav2>ul>li{
+	height: 55px;
+	background: #55a436;
+	margin-right: 15px;
+	line-height: 55px;
+	cursor: pointer;	
+}
+.nav2>ul>li>a{
+	text-decoration: none;
+	color: white !important;
+}
+
+
+/*-----------------------------------------------------------------*/
+
+.contact{
+	margin-top: 55px;
+}
+
+.contact li{
+	padding-bottom: 25px;
+}

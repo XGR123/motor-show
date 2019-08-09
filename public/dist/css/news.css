@@ -1,0 +1,35 @@
+
+/*-----------------------------------------------------------------------*/
+
+.nav2{
+	position: relative;
+	top: -15px;
+	z-index: 1
+}
+
+.nav2>ul>li{
+	height: 55px;
+	background: #55a436;
+	margin-right: 15px;
+	line-height: 55px;
+	cursor: pointer;
+		
+}
+.nav2>ul>li>a{
+	text-decoration: none;
+	color: white !important;
+}
+
+
+/*------------------------------------------------------------*/
+
+.pagination{
+	margin:0 auto;
+}
+
+.tworows{
+	overflow: hidden;  
+	display: -webkit-box;  
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;   
+}
